@@ -24,7 +24,7 @@ public class UserCommandController {
 
     @PostMapping(value = "/registration", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<HttpStatus> registration(@RequestBody UserRequestDto userRequestDto) {
-        userCommandService.registerNewUser(userRequestDto);
+        userCommandService.registerNewUser(null);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 }
