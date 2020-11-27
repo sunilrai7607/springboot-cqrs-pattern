@@ -23,7 +23,7 @@ We'll be using some of these patterns to build our example.
 we'll separate the domain model and its persistence to handle write and read operations
 
 Aggregate/Aggregator: 
-Aggregate is a pattern described in Domain-Driven-Development (DDD) that logically groups different entities by binding entities to an aggregate root.
+Aggregate is a pattern described in Domain-Driven-Design (DDD) that logically groups different entities by binding entities to an aggregate root.
 
 CQRS naturally benefits from the aggregate pattern, which groups write model, providing transaction guarantees. Aggregates normally hold the cache for better performance. 
 

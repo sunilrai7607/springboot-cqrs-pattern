@@ -1,8 +1,8 @@
 package com.sbr.rest.api.pattern.projectors;
 
-import com.sbr.rest.api.pattern.events.Event;
-import com.sbr.rest.api.pattern.events.UserAddAddressEvent;
-import com.sbr.rest.api.pattern.events.UserAddContactEvent;
+import com.sbr.rest.api.pattern.model.events.Event;
+import com.sbr.rest.api.pattern.model.events.UserAddAddressEvent;
+import com.sbr.rest.api.pattern.model.events.UserAddContactEvent;
 import com.sbr.rest.api.pattern.model.Address;
 import com.sbr.rest.api.pattern.model.Contact;
 import com.sbr.rest.api.pattern.model.UserAddress;

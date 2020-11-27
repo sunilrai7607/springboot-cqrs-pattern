@@ -1,4 +1,4 @@
-package com.sbr.rest.api.pattern.events;
+package com.sbr.rest.api.pattern.model.events;
 
 import com.sbr.rest.api.pattern.model.Contact;
 import lombok.Data;

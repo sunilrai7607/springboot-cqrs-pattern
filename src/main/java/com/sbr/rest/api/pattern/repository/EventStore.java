@@ -1,6 +1,6 @@
 package com.sbr.rest.api.pattern.repository;
 
-import com.sbr.rest.api.pattern.events.Event;
+import com.sbr.rest.api.pattern.model.events.Event;
 import org.springframework.stereotype.Component;
 
 import java.util.LinkedList;

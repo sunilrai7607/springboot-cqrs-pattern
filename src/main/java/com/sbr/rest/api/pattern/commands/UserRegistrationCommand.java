@@ -7,9 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateUserCommand {
+public class UserRegistrationCommand {
 
     private String userId;
-    private String firstName;
-    private String lastName;
+
+    private String username;
+
+    private String email;
+
+    private String password;
 }

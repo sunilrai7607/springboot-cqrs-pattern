@@ -1,6 +1,6 @@
 package com.sbr.rest.api.pattern.controller;
 
-import com.sbr.rest.api.pattern.model.dtos.UserQueryDto;
+import com.sbr.rest.api.pattern.model.dtos.queries.UserQueryDto;
 import com.sbr.rest.api.pattern.service.UserQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

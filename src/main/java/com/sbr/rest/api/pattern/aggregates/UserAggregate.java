@@ -1,8 +1,8 @@
 package com.sbr.rest.api.pattern.aggregates;
 
-import com.sbr.rest.api.pattern.commands.CreateUserCommand;
-import com.sbr.rest.api.pattern.events.Event;
-import com.sbr.rest.api.pattern.events.UserCreateEvent;
+import com.sbr.rest.api.pattern.commands.UserRegistrationCommand;
+import com.sbr.rest.api.pattern.model.events.Event;
+import com.sbr.rest.api.pattern.model.events.UserRegistrationEvent;
 import com.sbr.rest.api.pattern.model.User;
 import com.sbr.rest.api.pattern.repository.EventStore;
 import lombok.extern.slf4j.Slf4j;
@@ -23,9 +23,9 @@ public class UserAggregate {
         this.eventStore = eventStore;
     }
 
-    public List<Event> handleCreateUserCommand(CreateUserCommand createUserCommand) {
-        UserCreateEvent userCreateEvent = new UserCreateEvent(new User(createUserCommand.getUserId(), createUserCommand.getFirstName(), createUserCommand.getLastName()));
-        eventStore.addEvent(createUserCommand.getUserId(), userCreateEvent);
-        return Arrays.asList(userCreateEvent);
+    public List<Event> handleUserRegistrationCommand(UserRegistrationCommand userRegistrationCommand) {
+        UserRegistrationEvent userRegistrationEvent = new UserRegistrationEvent(new User(userRegistrationCommand.getUsername(), userRegistrationCommand.getEmail(), userRegistrationCommand.getPassword()));
+        eventStore.addEvent(userRegistrationCommand.getUsername(), userRegistrationEvent);
+        return Arrays.asList(userRegistrationEvent);
     }
 }
