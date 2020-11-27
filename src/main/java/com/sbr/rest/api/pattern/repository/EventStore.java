@@ -1,7 +1,6 @@
 package com.sbr.rest.api.pattern.repository;
 
 import com.sbr.rest.api.pattern.events.Event;
-import com.sbr.rest.api.pattern.model.User;
 import org.springframework.stereotype.Component;
 
 import java.util.LinkedList;
@@ -12,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class EventStore {
 
-    private Map<String, List<Event> > store = new ConcurrentHashMap<>();
+    private Map<String, List<Event>> store = new ConcurrentHashMap<>();
 
     public void addEvent(String id, Event event) {
         List<Event> events = store.get(id);

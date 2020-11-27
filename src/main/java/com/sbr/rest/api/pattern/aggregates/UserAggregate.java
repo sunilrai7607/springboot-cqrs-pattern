@@ -23,8 +23,8 @@ public class UserAggregate {
         this.eventStore = eventStore;
     }
 
-    public List<Event> handleCreateUserCommand(CreateUserCommand createUserCommand){
-        UserCreateEvent userCreateEvent = new UserCreateEvent(new User(createUserCommand.getUserId(),createUserCommand.getFirstName(), createUserCommand.getLastName()));
+    public List<Event> handleCreateUserCommand(CreateUserCommand createUserCommand) {
+        UserCreateEvent userCreateEvent = new UserCreateEvent(new User(createUserCommand.getUserId(), createUserCommand.getFirstName(), createUserCommand.getLastName()));
         eventStore.addEvent(createUserCommand.getUserId(), userCreateEvent);
         return Arrays.asList(userCreateEvent);
     }

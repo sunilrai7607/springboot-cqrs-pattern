@@ -21,21 +21,21 @@ import java.util.Set;
 @Slf4j
 public class UserProjector {
 
-   private final UserReadRepository userReadRepository;
+    private final UserReadRepository userReadRepository;
 
-   @Autowired
+    @Autowired
     public UserProjector(UserReadRepository userReadRepository) {
         this.userReadRepository = userReadRepository;
     }
 
-    public void project(String userId, List<Event> events){
-       events.stream().forEach( event -> {
-                   if (event instanceof UserAddAddressEvent)
-                       apply(userId, (UserAddAddressEvent) event);
-                   if (event instanceof UserAddContactEvent)
-                       apply(userId, (UserAddContactEvent) event);
-               }
-       );
+    public void project(String userId, List<Event> events) {
+        events.stream().forEach(event -> {
+                    if (event instanceof UserAddAddressEvent)
+                        apply(userId, (UserAddAddressEvent) event);
+                    if (event instanceof UserAddContactEvent)
+                        apply(userId, (UserAddContactEvent) event);
+                }
+        );
     }
 
     private void apply(String userId, UserAddAddressEvent event) {
@@ -47,7 +47,7 @@ public class UserProjector {
         addresses.add(address);
         userAddress.getAddressByRegion()
                 .put(address.getState(), addresses);
-       userReadRepository.addUserAddress(userId,userAddress );
+        userReadRepository.addUserAddress(userId, userAddress);
 
     }
 
